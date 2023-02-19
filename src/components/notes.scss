@@ -1,0 +1,92 @@
+$b: '.s-notes';
+
+#{$b} {
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+
+  &__header {
+    font-size: 72px;
+    margin: 0;
+  }
+
+  &__wrapper {
+    margin-top: 72px;
+    columns: 2;
+    column-gap: 30px;
+    position: relative;
+  }
+
+  &__note {
+    background-color: $bg-alt;
+    break-inside: avoid-column;
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.2s;
+    margin-bottom: 30px;
+
+    &:hover {
+      box-shadow: 0 0 10px 1px $accent-main;
+    }
+  }
+
+  &__delete {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: $text-main;
+    margin-bottom: -5px;
+    text-align: end;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__update {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-image: url("../assets/update.png");
+    background-color: transparent;
+    border: none;
+    filter: invert(100%);
+    top: -100px;
+    cursor: pointer;
+    right: 0;
+  }
+
+  &__input {
+    margin-top: auto;
+    position: relative;
+
+    &-subheader {
+      font-weight: 400;
+    }
+
+    &-el {
+      width: 100%;
+      background-color: $bg-alt;
+      border: $accent-main;
+      border-radius: 20px;
+      color: $text-main;
+      padding: 10px 20px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-submit {
+      position: absolute;
+      right: 10px;
+      bottom: 0;
+      height: 36px;
+      background-color: $bg-alt;
+      border: none;
+      color: $text-main;
+      cursor: pointer;
+    }
+  }
+}
